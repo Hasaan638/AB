@@ -1,7 +1,7 @@
 const Engine = Matter.Engine;
 const World= Matter.World;
 const Bodies = Matter.Bodies;
-
+const Constraint = Matter.Constraint;
 var engine, world;
 var box1, pig1;
 var backgroundImg,platform;
@@ -38,6 +38,8 @@ function setup(){
     bird = new Bird(100,100);
     newlog = new Log(230,180,80,PI/2);
 
+
+
 }
 
 function draw(){
@@ -64,4 +66,7 @@ function draw(){
     bird.display();
     platform.display();
     newlog.display();
+
+    line(bird.body.position.x,bird.body.position.y,newlog.body.position.x,newlog.body.position.y);
+    
 }
